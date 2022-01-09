@@ -1,2 +1,3 @@
 # azuredatafactory-adf-
-Test templates
+
+Test templates for making ci/cd with adf templates
