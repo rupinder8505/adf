@@ -1,0 +1,7 @@
+{
+	"name": "copy blob to datalake",
+	"properties": {
+		"description": "copy blob to datalake",
+		"annotations": []
+	}
+}
