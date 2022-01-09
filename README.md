@@ -1,0 +1,2 @@
+# azuredatafactory-adf-
+Test templates
