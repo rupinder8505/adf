@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "test variable",
+				"name": "set variable",
 				"type": "SetVariable",
 				"dependsOn": [],
 				"userProperties": [],
@@ -13,11 +13,11 @@
 				}
 			},
 			{
-				"name": "read_parameter_from_test_variable",
+				"name": "read_parameter",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "test variable",
+						"activity": "set variable",
 						"dependencyConditions": [
 							"Succeeded"
 						]
