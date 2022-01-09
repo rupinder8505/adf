@@ -1,0 +1,55 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "test variable",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "foo",
+					"value": "updated_bar"
+				}
+			},
+			{
+				"name": "read_parameter_from_test_variable",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "test variable",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "step2_variable",
+					"value": {
+						"value": "@pipeline().parameters.param_foo",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"param_foo": {
+				"type": "string",
+				"defaultValue": "param_bar"
+			}
+		},
+		"variables": {
+			"foo": {
+				"type": "String",
+				"defaultValue": "bar"
+			},
+			"step2_variable": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-01-09T20:18:16Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
